@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://feanqu53nk41"]
+
+[ext_resource type="Texture2D" uid="uid://dxrbhf4hllklp" path="res://assets/images/BG.png" id="1_uwrxv"]
+
+[node name="Node2D" type="Node2D" unique_id=949400982]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=880124541]
+repeat_size = Vector2(128, 128)
+autoscroll = Vector2(-250, 0)
+repeat_times = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1720084438]
+texture = ExtResource("1_uwrxv")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=433852249]
+position_smoothing_enabled = true
