@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://feanqu53nk41"]
 
 [ext_resource type="Texture2D" uid="uid://dxrbhf4hllklp" path="res://assets/images/BG.png" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://6a2t05koc1i1" path="res://assets/images/player.png" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://bjrk7ywjyldpj" path="res://scripts/character.gd" id="3_lnu2h"]
 
 [node name="Node2D" type="Node2D" unique_id=949400982]
 
@@ -14,4 +16,10 @@ texture = ExtResource("1_uwrxv")
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=433852249]
+position = Vector2(384, 0)
 position_smoothing_enabled = true
+
+[node name="Player" type="Sprite2D" parent="." unique_id=38376553]
+position = Vector2(32, 0)
+texture = ExtResource("2_yqjtg")
+script = ExtResource("3_lnu2h")
