@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://bjrk7ywjyldpj" path="res://scripts/character.gd" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://g0mklmsulf4l" path="res://scripts/game_manager.gd" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://b3yrv7jc8qkxr" path="res://scripts/start_button.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://30deyttbirac" path="res://scripts/progress_bar.gd" id="6_p57ef"]
+[ext_resource type="Script" uid="uid://dt1r6wt61lou7" path="res://scripts/progress_tick.gd" id="7_u5sy4"]
 
 [node name="Game" type="Node" unique_id=919067210]
 
@@ -58,3 +60,22 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "start"
 script = ExtResource("5_iywne")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=248453445]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_right = 225.0
+offset_bottom = 27.0
+grow_horizontal = 2
+max_value = 1.0
+step = 0.001
+value = 0.25
+script = ExtResource("6_p57ef")
+
+[node name="Progress" type="Timer" parent="." unique_id=1939921219]
+unique_name_in_owner = true
+wait_time = 0.25
+script = ExtResource("7_u5sy4")
