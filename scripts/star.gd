@@ -2,10 +2,12 @@ extends RigidBody2D
 
 
 func _ready() -> void:
-	await get_tree().create_timer(0.03).timeout
-	var p = global_position.y
 	freeze = true
-	var tw = get_tree().create_tween().set_parallel(true).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
+	await get_tree().create_timer(0.03).timeout
+	linear_velocity = Vector2.ZERO
+	angular_velocity = 0
+	var p = global_position.y
+	var tw = get_tree().create_tween().set_parallel(true).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 	tw.tween_property(self, "position", Vector2(900, p), 2.5)
 	tw.tween_property(self, "rotation", randf()*PI * 5, 2.5)
 	tw.play()
