@@ -8,6 +8,7 @@
 radius = 20.024984
 
 [node name="Star2" type="RigidBody2D" unique_id=427878005 groups=["hazard"]]
+collision_layer = 0
 gravity_scale = 0.0
 linear_velocity = Vector2(-250, 0)
 angular_velocity = 3.1415927
