@@ -14,6 +14,7 @@ const ASTEROID = preload("res://assets/nodes/asteroid.tscn")
 
 func _process(delta: float) -> void:
 	paralax.autoscroll.x = lerpf(paralax.autoscroll.x, -bg_speed, bg_lerp)
+	
 
 func spawn_scatter(instance: Resource) -> Variant:
 	var obj: RigidBody2D = instance.instantiate()
