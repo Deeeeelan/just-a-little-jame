@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dxrbhf4hllklp" path="res://assets/images/BG.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bxd75gp4lu7ob" path="res://scenes/player.tscn" id="2_u5sy4"]
+[ext_resource type="Script" uid="uid://dmvnmlwvu0kgd" path="res://scenes/waves.gd" id="4_kvpfn"]
 [ext_resource type="Script" uid="uid://g0mklmsulf4l" path="res://scripts/game_manager.gd" id="4_lbhrr"]
-[ext_resource type="Texture2D" uid="uid://b3kpkl44h5000" path="res://assets/images/start.png" id="4_vtaks"]
+[ext_resource type="Texture2D" uid="uid://bjxjlpjg2sqyg" path="res://assets/images/start.png" id="4_vtaks"]
 [ext_resource type="Script" uid="uid://b3yrv7jc8qkxr" path="res://scripts/start_button.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://30deyttbirac" path="res://scripts/progress_bar.gd" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://dsbnrk0rxqjy5" path="res://assets/images/death_screen.png" id="6_u5sy4"]
@@ -58,6 +59,9 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 script = ExtResource("4_lbhrr")
 paralax = NodePath("../Node2D/Parallax2D")
+
+[node name="Waves" type="Node" parent="GameManager" unique_id=482584233]
+script = ExtResource("4_kvpfn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981572944]
 
