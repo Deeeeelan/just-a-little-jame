@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bya2rwk0bjk3x"]
+
+[ext_resource type="Script" uid="uid://dtxlavpd3i3kf" path="res://scripts/asteroid_explode2.gd" id="1_qxarw"]
+[ext_resource type="Texture2D" uid="uid://tuncyo3loirb" path="res://assets/images/asteroid.png" id="2_g263i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
+radius = 20.024984
+
+[node name="Asteroid Explode" type="RigidBody2D" unique_id=427878005 groups=["hazard"]]
+gravity_scale = 0.0
+linear_velocity = Vector2(-250, 0)
+angular_velocity = 3.1415927
+script = ExtResource("1_qxarw")
+
+[node name="Asteroid" type="Sprite2D" parent="." unique_id=596219925]
+texture = ExtResource("2_g263i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=201590029]
+shape = SubResource("CircleShape2D_6sj1v")
+
+[node name="Timer" type="Timer" parent="." unique_id=282433179]

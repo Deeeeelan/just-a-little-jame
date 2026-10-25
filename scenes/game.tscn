@@ -8,9 +8,27 @@
 [ext_resource type="Script" uid="uid://b3yrv7jc8qkxr" path="res://scripts/start_button.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://30deyttbirac" path="res://scripts/progress_bar.gd" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://dsbnrk0rxqjy5" path="res://assets/images/death_screen.png" id="6_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://dntqo2jdelfix" path="res://assets/images/retry.png" id="7_kvpfn"]
+[ext_resource type="Script" uid="uid://ccqhwqr0tfwgp" path="res://scripts/health.gd" id="7_dinhu"]
+[ext_resource type="Texture2D" uid="uid://c86i5va25c3wv" path="res://assets/images/retry.png" id="7_kvpfn"]
 [ext_resource type="Script" uid="uid://dt1r6wt61lou7" path="res://scripts/progress_tick.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://be4lcrb700y8d" path="res://scenes/retrybutton.gd" id="8_dinhu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tn5n"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sj1v"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmp4e"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node" unique_id=919067210]
 
@@ -30,7 +48,9 @@ position = Vector2(384, 0)
 position_smoothing_enabled = true
 
 [node name="Player" parent="Node2D" unique_id=1525583839 instance=ExtResource("2_u5sy4")]
+unique_name_in_owner = true
 position = Vector2(32, 0)
+collision_mask = 3
 
 [node name="Debris" type="Node2D" parent="Node2D" unique_id=2145191500]
 unique_name_in_owner = true
@@ -83,24 +103,75 @@ step = 0.001
 value = 0.25
 script = ExtResource("6_p57ef")
 
+[node name="Health" type="ProgressBar" parent="CanvasLayer/Start" unique_id=1705272904]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -27.0
+offset_right = 225.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_8tn5n")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6sj1v")
+max_value = 5.0
+value = 4.0
+show_percentage = false
+script = ExtResource("7_dinhu")
+
+[node name="Label" type="Label" parent="CanvasLayer/Start/Health" unique_id=1764309909]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Health"
+label_settings = SubResource("LabelSettings_qmp4e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=1748871355]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RetryButton" type="Button" parent="CanvasLayer/DeathScreen" unique_id=578847406]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -29.0
+offset_right = 54.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
 icon = ExtResource("7_kvpfn")
 script = ExtResource("8_dinhu")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/DeathScreen" unique_id=661138597]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -129.0
+offset_right = 77.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("6_u5sy4")
 
 [node name="Progress" type="Timer" parent="." unique_id=1939921219]
