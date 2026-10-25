@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED = 500
-@export var health = 5
+@export var health = 10
 
 var iframe = false
 
