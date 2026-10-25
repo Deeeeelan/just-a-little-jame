@@ -8,6 +8,7 @@ var tick : float = 0
 
 func _process(delta: float) -> void:
 	if health <= 0:
+		
 		print("You DId")
 	#tick += delta
 	#position = center + Vector2(0, sin(tick) * 20)
