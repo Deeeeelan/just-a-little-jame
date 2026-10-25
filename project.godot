@@ -27,6 +27,11 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [global_group]
 
 hazard=""
+bullet=""
+
+[gui]
+
+theme/custom_font="uid://c57j3746nnn6m"
 
 [input]
 
