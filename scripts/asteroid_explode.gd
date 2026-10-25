@@ -7,8 +7,9 @@ func spawn(instance: Resource, rot : float) -> Variant:
 	get_parent().add_child(obj)
 	obj.position = position
 	obj.linear_velocity = Vector2.from_angle(deg_to_rad(rot)).normalized() * 400
-	#obj.angular_velocity = deg_to_rad(randi_range(-360, 360))
-	#obj.angular_damp = randf_range(0, 1)
+	get_tree().create_timer(5).timeout.connect(func():
+		if obj: obj.queue_free()
+	)
 	return obj
 	
 func _ready() -> void:
@@ -26,7 +27,6 @@ func _ready() -> void:
 		var cur = randf_range(0, 180.0)
 		for b in bullets:
 			spawn(BULLET, cur)
-			print(cur)
 			cur += deg
 		queue_free()
 	)

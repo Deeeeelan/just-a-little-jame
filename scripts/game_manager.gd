@@ -13,6 +13,7 @@ var bg_lerp: float = 0.15
 const ASTEROID = preload("res://assets/nodes/asteroid.tscn")
 const ASTEROID_EXPLODE = preload("res://assets/nodes/asteroid_explode.tscn")
 const STAR = preload("res://assets/nodes/star.tscn")
+const STAR_2 = preload("res://assets/nodes/star2.tscn")
 
 func _process(delta: float) -> void:
 	paralax.autoscroll.x = lerpf(paralax.autoscroll.x, -bg_speed, bg_lerp)
@@ -46,5 +47,5 @@ func start_game():
 	bg_speed = 300
 	%Progress.start()
 	while true:
-		spawn_scatter(STAR)
+		spawn_scatter_vel(STAR_2)
 		await get_tree().create_timer(1).timeout

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://un07lrrj3pro"]
+
+[ext_resource type="Script" uid="uid://cwptp0hb7n1gx" path="res://scripts/star2.gd" id="1_jbiue"]
+[ext_resource type="Texture2D" uid="uid://bjhi21fpgb60i" path="res://assets/images/star.png" id="2_gcinu"]
+[ext_resource type="Texture2D" uid="uid://yoqdf0ekrvyr" path="res://assets/images/starsmall.png" id="3_w6t3q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
+radius = 20.024984
+
+[node name="Star2" type="RigidBody2D" unique_id=427878005 groups=["hazard"]]
+gravity_scale = 0.0
+linear_velocity = Vector2(-250, 0)
+angular_velocity = 3.1415927
+script = ExtResource("1_jbiue")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=596219925]
+texture = ExtResource("2_gcinu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=201590029]
+shape = SubResource("CircleShape2D_6sj1v")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=528175716]
+emitting = false
+amount = 25
+texture = ExtResource("3_w6t3q")
+emission_shape = 1
+emission_sphere_radius = 26.0
+gravity = Vector2(0, 480)
+radial_accel_min = -180.0
+radial_accel_max = 180.0
+angle_max = 360.0
+color = Color(0.45490196, 0.45490196, 0.45490196, 0.80784315)
