@@ -26,6 +26,7 @@ position_smoothing_enabled = true
 
 [node name="Player" parent="Node2D" unique_id=1525583839 instance=ExtResource("2_u5sy4")]
 position = Vector2(32, 0)
+platform_floor_layers = 4294967292
 
 [node name="Debris" type="Node2D" parent="Node2D" unique_id=2145191500]
 unique_name_in_owner = true
@@ -37,7 +38,7 @@ paralax = NodePath("../Node2D/Parallax2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981572944]
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1207257818]
+[node name="Start" type="Control" parent="CanvasLayer" unique_id=1207257818]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,7 +46,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/Control" unique_id=1705315415]
+[node name="Button" type="Button" parent="CanvasLayer/Start" unique_id=1705315415]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -61,7 +62,7 @@ grow_vertical = 2
 text = "start"
 script = ExtResource("5_iywne")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=248453445]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Start" unique_id=248453445]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -74,6 +75,17 @@ max_value = 1.0
 step = 0.001
 value = 0.25
 script = ExtResource("6_p57ef")
+
+[node name="Death Screen" type="Control" parent="CanvasLayer" unique_id=1748871355]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="CanvasLayer/Death Screen" unique_id=578847406]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="Progress" type="Timer" parent="." unique_id=1939921219]
 unique_name_in_owner = true
