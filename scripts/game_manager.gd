@@ -2,6 +2,8 @@ extends Node
 
 var started = false
 
+@onready var waves: Node = $Waves
+
 @export var progress: float = 0.0
 @export var bg_speed: float = 50.0
 @export var paralax: Parallax2D
@@ -23,6 +25,4 @@ func start_game():
 	print("start")
 	bg_speed = 300
 	%Progress.start()
-	while true:
-		spawn_scatter_vel(ASTEROID_EXPLODE_2)
-		await get_tree().create_timer(1).timeout
+	waves.start()

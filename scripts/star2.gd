@@ -30,5 +30,5 @@ func _ready() -> void:
 	
 	for b in range(13):
 		spawn(BULLET)
-		await get_tree().create_timer(0.07).timeout
+		await get_tree().create_timer(0.14).timeout
 	
