@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED = 500
+@export var SPEED = 300
 
 var center = self.position
 var tick : float = 0
@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	var direction := Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+	var direction := Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized()
 	
 	velocity = direction * SPEED
 	move_and_slide()
