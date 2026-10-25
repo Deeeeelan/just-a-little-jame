@@ -10,8 +10,9 @@ var tick : float = 0
 
 func _process(delta: float) -> void:
 	if health <= 0:
-		
 		print("You DId")
+		Engine.time_scale = 0
+		$"../../CanvasLayer/DeathScreen".visible = true
 	#tick += delta
 	#position = center + Vector2(0, sin(tick) * 20)
 	#rotation_degrees = (position - center).y / 4

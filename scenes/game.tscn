@@ -133,21 +133,41 @@ vertical_alignment = 1
 [node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=1748871355]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RetryButton" type="Button" parent="CanvasLayer/DeathScreen" unique_id=578847406]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -29.0
+offset_right = 54.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
 icon = ExtResource("7_kvpfn")
 script = ExtResource("8_dinhu")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/DeathScreen" unique_id=661138597]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -129.0
+offset_right = 77.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("6_u5sy4")
 
 [node name="Progress" type="Timer" parent="." unique_id=1939921219]
