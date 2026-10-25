@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://30deyttbirac" path="res://scripts/progress_bar.gd" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://dsbnrk0rxqjy5" path="res://assets/images/death_screen.png" id="6_u5sy4"]
 [ext_resource type="Script" uid="uid://ccqhwqr0tfwgp" path="res://scripts/health.gd" id="7_dinhu"]
-[ext_resource type="Texture2D" uid="uid://c86i5va25c3wv" path="res://assets/images/retry.png" id="7_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://dntqo2jdelfix" path="res://assets/images/retry.png" id="7_kvpfn"]
 [ext_resource type="Script" uid="uid://dt1r6wt61lou7" path="res://scripts/progress_tick.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://be4lcrb700y8d" path="res://scenes/retrybutton.gd" id="8_dinhu"]
 
@@ -50,6 +50,7 @@ position_smoothing_enabled = true
 [node name="Player" parent="Node2D" unique_id=1525583839 instance=ExtResource("2_u5sy4")]
 unique_name_in_owner = true
 position = Vector2(32, 0)
+collision_layer = 3
 collision_mask = 3
 
 [node name="Debris" type="Node2D" parent="Node2D" unique_id=2145191500]
@@ -58,6 +59,8 @@ unique_name_in_owner = true
 [node name="GameManager" type="Node" parent="." unique_id=1842606817 node_paths=PackedStringArray("paralax")]
 unique_name_in_owner = true
 script = ExtResource("4_lbhrr")
+progress = null
+bg_speed = null
 paralax = NodePath("../Node2D/Parallax2D")
 
 [node name="Waves" type="Node" parent="GameManager" unique_id=482584233]

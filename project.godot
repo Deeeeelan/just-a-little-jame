@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Just A Little Jame"
+config/name="Wandering in Space"
 run/main_scene="uid://feanqu53nk41"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/images/icon.svg"
