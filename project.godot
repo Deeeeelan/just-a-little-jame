@@ -13,12 +13,11 @@ config_version=5
 config/name="Wandering in Space"
 run/main_scene="uid://feanqu53nk41"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://assets/images/icon.svg"
+config/icon="uid://6a2t05koc1i1"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 
 [editor_plugins]
 

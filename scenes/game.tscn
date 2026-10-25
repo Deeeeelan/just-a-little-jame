@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dntqo2jdelfix" path="res://assets/images/retry.png" id="7_kvpfn"]
 [ext_resource type="Script" uid="uid://dt1r6wt61lou7" path="res://scripts/progress_tick.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://be4lcrb700y8d" path="res://scenes/retrybutton.gd" id="8_dinhu"]
+[ext_resource type="Texture2D" uid="uid://dqb55cfl8sjnr" path="res://assets/images/title.png" id="9_kvuet"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tn5n"]
 bg_color = Color(1, 1, 1, 1)
@@ -29,6 +30,9 @@ corner_radius_bottom_left = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_qmp4e"]
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6sj1v"]
+font_size = 32
 
 [node name="Game" type="Node" unique_id=919067210]
 
@@ -49,7 +53,7 @@ position_smoothing_enabled = true
 
 [node name="Player" parent="Node2D" unique_id=1525583839 instance=ExtResource("2_u5sy4")]
 unique_name_in_owner = true
-position = Vector2(32, 0)
+position = Vector2(201, -180)
 collision_layer = 3
 collision_mask = 3
 
@@ -137,6 +141,23 @@ label_settings = SubResource("LabelSettings_qmp4e")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="title" type="TextureRect" parent="CanvasLayer/Start" unique_id=1436565792]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -564.0
+offset_top = -23.0
+offset_right = 86.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_kvuet")
+stretch_mode = 5
+
 [node name="DeathScreen" type="Control" parent="CanvasLayer" unique_id=1748871355]
 visible = false
 layout_mode = 3
@@ -176,6 +197,45 @@ offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_u5sy4")
+
+[node name="WinScreen" type="Control" parent="CanvasLayer" unique_id=713226264]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/WinScreen" unique_id=861199274]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/WinScreen" unique_id=595919763]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -49.5
+offset_right = 241.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "The little guy is back home. Good job.
+
+You Win!"
+label_settings = SubResource("LabelSettings_6sj1v")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Progress" type="Timer" parent="." unique_id=1939921219]
 unique_name_in_owner = true

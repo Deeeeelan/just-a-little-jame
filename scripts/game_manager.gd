@@ -17,6 +17,13 @@ const ASTEROID_EXPLODE_2 = preload("res://assets/nodes/asteroid_explode2.tscn")
 func _process(delta: float) -> void:
 	paralax.autoscroll.x = lerpf(paralax.autoscroll.x, -bg_speed, bg_lerp)
 
+func end_game():
+	var tw = get_tree().create_tween()
+	tw.tween_property($"../CanvasLayer/WinScreen", "modulate", Color(1.0, 1.0, 1.0, 1.0), 5)
+	tw.play()
+	await tw.finished
+	Engine.time_scale = 0
+
 func start_game():
 	if started: return
 	started = true
