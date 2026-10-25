@@ -54,8 +54,6 @@ position_smoothing_enabled = true
 [node name="Player" parent="Node2D" unique_id=1525583839 instance=ExtResource("2_u5sy4")]
 unique_name_in_owner = true
 position = Vector2(201, -180)
-collision_layer = 3
-collision_mask = 3
 
 [node name="Debris" type="Node2D" parent="Node2D" unique_id=2145191500]
 unique_name_in_owner = true

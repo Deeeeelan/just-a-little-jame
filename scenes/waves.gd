@@ -49,10 +49,8 @@ func get_rand_proj3():
 
 
 func start():
-	#DEBUG CHANGE THIS LATER
-	var progress = 0.161
 	while true:
-		#var progress = game_manager.progress
+		var progress = game_manager.progress
 		if progress >= 0 and progress < 0.08:
 			spawn_random_vel(get_rand_proj1())
 			await get_tree().create_timer(1.5).timeout
@@ -83,11 +81,39 @@ func start():
 			spawn_random_vel(get_rand_proj2())
 			await get_tree().create_timer(0.8).timeout
 		if progress > 0.40 and progress < 0.48:
-			#spawn(STAR_2, )
-			pass
-			
-			
-			
+			spawn(STAR_2, 0, 300)
+			spawn(STAR_2, 0, -300)
+			spawn(ASTEROID, -500, 350)
+			spawn(ASTEROID, -500, 250)
+			spawn(ASTEROID, -500, 150)
+			spawn(ASTEROID, -500, 0)
+			spawn(ASTEROID, -500, -350)
+			spawn(ASTEROID_EXPLODE, -500, -250)
+			spawn(ASTEROID, -500, -150)
+			spawn(ASTEROID, -500, -50)
+			await get_tree().create_timer(1.5).timeout
+			spawn(STAR_2, 0, 300)
+			spawn(STAR_2, 0, -300)
+			spawn(ASTEROID_EXPLODE, -500, 350)
+			spawn(ASTEROID, -500, 250)
+			spawn(ASTEROID, -500, 150)
+			spawn(ASTEROID, -500, 0)
+			spawn(ASTEROID, -500, -350)
+			spawn(ASTEROID, -500, 50)
+			spawn(ASTEROID, -500, -150)
+			spawn(ASTEROID, -500, -50)
+			await get_tree().create_timer(1.5).timeout
+			spawn(STAR_2, 0, 300)
+			spawn(STAR_2, 0, -300)
+			spawn(ASTEROID, -500, -250)
+			spawn(ASTEROID, -500, 250)
+			spawn(ASTEROID, -500, 150)
+			spawn(ASTEROID_EXPLODE, -500, 0)
+			spawn(ASTEROID, -500, -350)
+			spawn(ASTEROID, -500, 500)
+			spawn(ASTEROID, -500, -150)
+			spawn(ASTEROID, -500, -50)
+			await get_tree().create_timer(1.5).timeout
 		if progress > 0.48 and progress < 0.56:
 			spawn_random_vel(get_rand_proj2())
 			await get_tree().create_timer(1).timeout
@@ -95,10 +121,11 @@ func start():
 			spawn_random_vel(get_rand_proj3())
 			await get_tree().create_timer(0.8).timeout
 		if progress > 0.64 and progress < 0.72:
-			pass
-			
-			
-			
+			spawn_random_vel(get_rand_proj2())
+			spawn_random_vel(get_rand_proj1())
+			spawn_random_vel(get_rand_proj1())
+			spawn_random_vel(get_rand_proj2())
+			await get_tree().create_timer(0.7).timeout
 		if progress > 0.72 and progress < 0.8:
 			spawn_random_vel(get_rand_proj3())
 			await get_tree().create_timer(0.7).timeout
@@ -129,5 +156,7 @@ func start():
 			spawn(STAR_2, -400, 50)
 			spawn(STAR_2, -400, -50)
 			await get_tree().create_timer(0.6).timeout
+		if progress > 1:
+			game_manager.end_game()
 		else:
 			await get_tree().create_timer(1).timeout
