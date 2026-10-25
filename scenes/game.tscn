@@ -59,7 +59,7 @@ position = Vector2(201, -180)
 unique_name_in_owner = true
 
 [node name="Node2D" type="Node2D" parent="Node2D" unique_id=1394540141]
-position = Vector2(-193, -326)
+position = Vector2(959, 1)
 
 [node name="Node2D2" type="Node2D" parent="Node2D" unique_id=1327215714]
 position = Vector2(957, 331)
@@ -126,7 +126,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_8tn5n")
 theme_override_styles/fill = SubResource("StyleBoxFlat_6sj1v")
-max_value = 10.0
+max_value = 12.0
 value = 4.0
 show_percentage = false
 script = ExtResource("7_dinhu")

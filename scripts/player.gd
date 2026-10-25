@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED = 500
-@export var health = 10
+@export var health = 12
 
 var iframe = false
 
@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
-		print(collider.is_in_group("hazard"), collider)
 		if collider.is_in_group("hazard") and not iframe:
 			iframe = true
 			modulate = Color(0.403, 0.613, 0.631, 1.0)
