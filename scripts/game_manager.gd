@@ -29,6 +29,9 @@ func end_game():
 func start_game():
 	if started: return
 	started = true
+	var tw = get_tree().create_tween()
+	tw.tween_property($"../CanvasLayer/Start/title", "modulate", Color(1.0, 1.0, 1.0, 0.0), 2)
+	tw.play()
 	print("start")
 	bg_speed = 300
 	%Progress.start()
