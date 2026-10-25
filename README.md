@@ -4,12 +4,13 @@
 
 [Play the game here!](https://dee1an.itch.io/wandering-in-space)
 
-Wandering in space.
-Looking to return back home. 
+Wandering in space.<br>
+Looking to return back home.<br>
 Dangers in the path.
 
 WASD/←↑↓→ - Move
 
+---
 
 A short bullet hell game about returning home. 
 
@@ -17,7 +18,7 @@ Created for the October 2026 Jame Gam Game Jam with a team of 2 people (and a ma
 
 We used Godot for the game engine and Aseprite for the pixel art.
 
-The game is fairly simple, with 3 types of obstacles with multiple variations of each of varying difficulty.
+The game is fairly simple, with 3 types of obstacles with multiple variations of each of varying difficulty. The progression consists of multiple determined or randomly generated waves that become more difficult as you progress closer to the end. 
 
 ![Gameplay Image](photos/gameplay.png)
 
