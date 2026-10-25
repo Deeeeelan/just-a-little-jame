@@ -1,18 +1,22 @@
 extends CharacterBody2D
 
 @export var SPEED = 500
+@export var health = 5
 
 var center = self.position
 var tick : float = 0
 
 func _process(delta: float) -> void:
-		#tick += delta
-		#position = center + Vector2(0, sin(tick) * 20)
-		#rotation_degrees = (position - center).y / 4
-		pass
+	if health <= 0:
+		print("You DId")
+	#tick += delta
+	#position = center + Vector2(0, sin(tick) * 20)
+	#rotation_degrees = (position - center).y / 4
+	pass
 
 func _body_entered(body: Node2D):
-	print(body)
+	health -= 1
+	print(health)
 	
 func _input(event: InputEvent) -> void:
 	pass
