@@ -31,14 +31,13 @@ func _physics_process(delta: float) -> void:
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
+		print(collider.is_in_group("hazard"), collider)
 		if collider.is_in_group("hazard") and not iframe:
 			iframe = true
-			collision_layer = 0
-			self_modulate = Color(0.564, 0.689, 0.67, 1.0)
+			modulate = Color(0.403, 0.613, 0.631, 1.0)
 			health -= 1
 			get_tree().create_timer(1).timeout.connect(func():
-				collision_layer = 1
-				self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				modulate = Color(1.0, 1.0, 1.0, 1.0)
 				iframe = false
 			)
 		if collider.is_in_group("bullet"):
