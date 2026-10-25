@@ -6,8 +6,8 @@
 radius = 5.0
 
 [node name="Bullet" type="RigidBody2D" unique_id=427878005]
-collision_layer = 0
-collision_mask = 2
+collision_layer = 2
+collision_mask = 0
 mass = 0.05
 gravity_scale = 0.0
 
