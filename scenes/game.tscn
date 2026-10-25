@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://bjrk7ywjyldpj" path="res://scripts/character.gd" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://col5e7iglv8fj" path="res://scripts/collision.gd" id="4_gee14"]
 [ext_resource type="Script" uid="uid://g0mklmsulf4l" path="res://scripts/game_manager.gd" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://do36xo4gisddl" path="res://assets/nodes/asteroid.tscn" id="5_0tnpc"]
 [ext_resource type="Script" uid="uid://b3yrv7jc8qkxr" path="res://scripts/start_button.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://30deyttbirac" path="res://scripts/progress_bar.gd" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://dt1r6wt61lou7" path="res://scripts/progress_tick.gd" id="7_u5sy4"]
@@ -43,8 +42,6 @@ script = ExtResource("3_lnu2h")
 
 [node name="Debris" type="Node2D" parent="Node2D" unique_id=2145191500]
 unique_name_in_owner = true
-
-[node name="Asteroid" parent="Node2D/Debris" unique_id=427878005 instance=ExtResource("5_0tnpc")]
 
 [node name="GameManager" type="Node" parent="." unique_id=1842606817 node_paths=PackedStringArray("paralax")]
 unique_name_in_owner = true
